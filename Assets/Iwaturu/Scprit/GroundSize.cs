@@ -8,6 +8,5 @@ public class GroundSize : MonoBehaviour
     void Awake()
     {
         size = GetComponent<MeshRenderer>().bounds.size;
-
     }
 }

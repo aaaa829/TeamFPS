@@ -21,7 +21,6 @@ public class EnemyManager : MonoBehaviour
         {
             StartCoroutine(EnemySet(i));
         }
-
     }
     IEnumerator EnemySet(int col)
     {

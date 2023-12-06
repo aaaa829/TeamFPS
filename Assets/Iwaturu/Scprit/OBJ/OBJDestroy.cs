@@ -8,7 +8,6 @@ public class OBJDestroy : MonoBehaviour
     [HideInInspector] public int MAXHP;
     [HideInInspector] public bool isTimerBreak;
     int HP, breakDamage;
-    Bullet BulletATK;
     OBJDirector OBJ;
     Vector3 Object, size;
 
@@ -46,8 +45,9 @@ public class OBJDestroy : MonoBehaviour
     {
         if (other.gameObject.tag == "bullet")
         {
-            BulletATK = other.gameObject.GetComponent<Bullet>();
-            HP -= BulletATK.attack;
+            int BulletATK;
+            BulletATK = other.gameObject.GetComponent<Bullet>().attack;
+            HP -= BulletATK;
             if (HP <= 0 && HP >= -99)
             {
                 OBJ.Drop();
@@ -56,7 +56,7 @@ public class OBJDestroy : MonoBehaviour
         }
         if (other.gameObject.tag == "OBJ" || other.gameObject.tag == "FildOBJ")
         {
-            float rangeX = Random.Range(-(size.x / 2.0f) - 2.05f, size.x / 2.0f - 2.05f);
+            float rangeX = Random.Range(-(size.x / 2) - 2.05f, size.x / 2.0f - 2.05f);
             float rangeZ = Random.Range(-(size.z / 2) + 1.06f, size.z / 2 + 1.06f);
             transform.parent.position = new Vector3(rangeX, transform.position.y, rangeZ);
         }

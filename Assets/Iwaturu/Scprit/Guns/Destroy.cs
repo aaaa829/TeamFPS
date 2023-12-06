@@ -17,7 +17,6 @@ public class Destroy : MonoBehaviour
             {
                 hitPos = hit.point;
             }
-
         }
     }
     private void OnTriggerEnter(Collider other)

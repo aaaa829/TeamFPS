@@ -7,7 +7,6 @@ public class Shot : MonoBehaviour
 {
     public GameObject bulletPerfab;// 弾のプレハブ
     public int Maxremainingbullets, remainingbullets, ShotSpeed;//マガジンの装弾数 / マガジン内の残弾 /飛ばす力
-    float timer = 0.0f;
     public float interval;
     public AudioClip[] sound;
     AudioSource SE;
@@ -15,12 +14,11 @@ public class Shot : MonoBehaviour
     {
         remainingbullets = Maxremainingbullets;
         SE = GetComponent<AudioSource>();
-
     }
 
     void Update()
     {
-
+        float timer = 0.0f;
         if (Input.GetButton("Fire1") && timer <= 0.0f)
         {
             Shoot();

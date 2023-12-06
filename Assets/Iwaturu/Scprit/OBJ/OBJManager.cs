@@ -9,11 +9,11 @@ public class OBJManager : MonoBehaviour
     public GameManager GM;
     public MeshRenderer ground;
     public GameObject OBJDirecterPrefabs, empty;
-    [HideInInspector] public Vector3 size;
     [HideInInspector] public float coroTime;
     [HideInInspector] public int Yrand;
-    Vector3 posi;
+    [HideInInspector] public Vector3 size;
     float halfExtents;
+    Vector3 posi;
     void Start()
     {
         coroTime = GM.timer / 3;
@@ -31,7 +31,6 @@ public class OBJManager : MonoBehaviour
         yield return new WaitForSeconds(coroTime * col);
         var parent = transform;
         int counter = 0;
-        // int counterA = 0;
         while (counter < 50)
         {
             float rangex = Random.Range(-(size.x / 2.0f), size.x / 2.0f);

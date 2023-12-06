@@ -7,16 +7,13 @@ using UnityEngine;
 public class EnemyAction : MonoBehaviour
 {
     const int MaxHp = 100;
-    [HideInInspector] public int hp, index;
     public float speed;
-    float rote;
-    bool capture;
     public GameObject itemPrefab;
+    [HideInInspector] public int hp, index;
+    [HideInInspector] public GameObject[] targets;
     EnemySearch enemySearch;
-    Bullet bulletATK;
     Rigidbody rb;
     Animator animator;
-    [HideInInspector] public GameObject[] targets;
     Vector3 result;
 
     private void Awake()
@@ -33,7 +30,7 @@ public class EnemyAction : MonoBehaviour
     }
     void Update()
     {
-        capture = enemySearch.IsCapture;
+        bool capture = enemySearch.IsCapture;
         if (capture == false)
         {
             rb.velocity = transform.forward * speed;
@@ -49,7 +46,7 @@ public class EnemyAction : MonoBehaviour
         }
         if (targets.Length <= 0)
         {
-            Destroy(this.transform.parent.gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 
@@ -77,11 +74,12 @@ public class EnemyAction : MonoBehaviour
     {
         if (other.gameObject.tag == "FildOBJ" || other.gameObject.tag == "OBJ")
         {
+            float rote;
             if (result.y < 90.0f)
             {
                 rote = 3.0f;
             }
-            else if (result.y >= 90.0f)
+            else
             {
                 rote = -3.0f;
             }
@@ -93,7 +91,7 @@ public class EnemyAction : MonoBehaviour
     {
         if (other.gameObject.tag == "bullet")
         {
-            bulletATK = other.gameObject.GetComponent<Bullet>();
+            Bullet bulletATK = other.gameObject.GetComponent<Bullet>();
             hp -= bulletATK.attack;
             if (hp <= 0)
             {
