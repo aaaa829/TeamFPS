@@ -36,7 +36,6 @@ public class EnemyManager : MonoBehaviour
             {
                 Instantiate(enemyPrefab, vec, Quaternion.Euler(0, 0, 0), parent);
                 counter++;
-
             }
         }
     }
