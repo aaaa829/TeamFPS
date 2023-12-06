@@ -3350,7 +3350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7172335025230536156, guid: 822c3d99d368db3489b51af09fd3a6b2, type: 3}
       propertyPath: interval
-      value: 0.05
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 7596440708309611649, guid: 822c3d99d368db3489b51af09fd3a6b2, type: 3}
       propertyPath: m_Layer
