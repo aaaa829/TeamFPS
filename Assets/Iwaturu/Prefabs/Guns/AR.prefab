@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPerfab: {fileID: 7565030381299030621, guid: c5a9a4d40ffe2dc418989d88d90440e1, type: 3}
   Maxremainingbullets: 30
-  remainingbullets: 30
+  remainingbullets: -14
   ShotSpeed: 1000
   interval: 0.01
   sound:
