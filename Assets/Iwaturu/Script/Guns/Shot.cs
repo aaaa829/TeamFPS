@@ -10,6 +10,7 @@ public class Shot : MonoBehaviour
     public float interval;
     public AudioClip[] sound;
     AudioSource SE;
+    float timer;
     private void Start()
     {
         remainingbullets = Maxremainingbullets;
@@ -18,7 +19,7 @@ public class Shot : MonoBehaviour
 
     void Update()
     {
-        float timer = 0.0f;
+
         if (Input.GetButton("Fire1") && timer <= 0.0f)
         {
             Shoot();

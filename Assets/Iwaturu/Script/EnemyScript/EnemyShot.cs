@@ -8,7 +8,7 @@ public class EnemyShot : MonoBehaviour
     public GameObject bulletPerfab, enemyPrefab;// 弾のプレハブ /自身の親プレハブ
     public EnemySearch enemySearch;
     public int Maxremainingbullets, remainingbullets, ShotSpeed;//マガジンの装弾数 / マガジン内の残弾 /飛ばす力
-    float timer = 0.0f;
+    float timer;
     public float interval;
 
     private void Start()
